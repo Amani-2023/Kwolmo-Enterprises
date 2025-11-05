@@ -49,5 +49,6 @@ if (modal) {
     });
     window.addEventListener("click", (e) => {
         if (e.target == modal) modal.style.display = "none";
-    });
+    }); >>>
+    >>> > a9940ae(Initial website upload)
 }
