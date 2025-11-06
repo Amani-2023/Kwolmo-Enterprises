@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register | Kwolmo Enterprises Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌿 Kwolmo Enterprises Ltd</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="register.html" class="active">Registration</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="monetisation.html">Monetisation</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="page-header">
+            <h1>Registration Portal</h1>
+            <p>Sign up for training, membership, or community initiative support</p>
+        </section>
+
+        <section class="forms-grid">
+
+            <!-- TRAINING / PROGRAMME REGISTRATION -->
+            <div class="form-box">
+                <h2>Programme Registration</h2>
+                <p>Select a programme and choose payment terms. Fees must be paid in a minimum of 2 and maximum of 3 installments (deposit + weekly/monthly installments).</p>
+
+                <form id="programmeForm" class="form">
+                    <label>Full Name <input name="fullname" type="text" required></label>
+                    <label>Email Address <input name="email" type="email" required></label>
+                    <label>Phone Number <input name="phone" type="tel" required></label>
+
+                    <label>Programme
+            <select name="programme" required>
+              <option value="">-- Choose Programme --</option>
+              <option value="training" data-admission="500" data-fees="3000">Training — Admission 500/= — Fees 3,000/=</option>
+              <option value="mentorship" data-admission="1000" data-fees="5000">Mentorship — Admission 1,000/= — Fees 5,000/=</option>
+              <option value="empowerment" data-admission="1500" data-fees="7500">Empowerment — Admission 1,500/= — Fees 7,500/=</option>
+              <option value="entrepreneurship" data-admission="2000" data-fees="10000">Entrepreneurship — Admission 2,000/= — Fees 10,000/=</option>
+            </select>
+          </label>
+
+                    <label>Payment Plan
+            <select name="paymentPlan" required>
+              <option value="">-- Choose Plan --</option>
+              <option value="2">2 installments (Deposit + 1)</option>
+              <option value="3">3 installments (Deposit + 2)</option>
+            </select>
+          </label>
+
+                    <label>Installment Frequency
+            <select name="frequency" required>
+              <option value="">-- Choose Frequency --</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </label>
+
+                    <label>Deposit Amount (KSh) <input name="deposit" type="number" min="0" required></label>
+
+                    <div class="small-note">Payment mode: M-Changa Paybill <strong>891300</strong> | Account: <strong>62527</strong>. After submitting, follow M-Changa instructions to send the deposit and note your registration reference.</div>
+
+                    <button type="submit" class="btn">Submit Programme Registration</button>
+                </form>
+            </div>
+
+            <!-- SOCIAL MEMBERSHIP -->
+            <div class="form-box">
+                <h2>Social Membership</h2>
+                <p>Join a social group. Membership fees support fellowships, welfare, evangelism and benevolence activities.</p>
+
+                <form id="membershipForm" class="form">
+                    <label>Full Name <input name="fullname" type="text" required></label>
+                    <label>Email Address <input name="email" type="email" required></label>
+                    <label>Phone Number <input name="phone" type="tel" required></label>
+
+                    <label>Membership Type
+            <select name="membershipType" required>
+              <option value="">-- Select Membership --</option>
+              <option value="fellowships" data-fee="50">Fellowships — 50/=</option>
+              <option value="welfares" data-fee="100">Welfares — 100/=</option>
+              <option value="evangelisms" data-fee="150">Evangelisms — 150/=</option>
+              <option value="benevolence" data-fee="200">Benevolence — 200/=</option>
+            </select>
+          </label>
+
+                    <div class="small-note">Pay membership via M-Changa Paybill <strong>891300</strong> (Account: your name or membership reference).</div>
+                    <button type="submit" class="btn">Register Membership</button>
+                </form>
+            </div>
+
+            <!-- COMMUNITY INITIATIVE (Orphans, Widows, PWDs, Poor & Needy) -->
+            <div class="form-box wide">
+                <h2>Community Initiative Registration</h2>
+                <p>Register on behalf of orphans, widows, persons with disabilities, or poor & needy cases. Provide full location details to help coordinate physical classes and support.</p>
+
+                <form id="communityForm" class="form">
+                    <label>Full Name <input name="fullname" type="text" required></label>
+                    <label>Phone Number <input name="phone" type="tel" required></label>
+                    <label>Email (optional) <input name="email" type="email"></label>
+
+                    <label>Category
+            <select name="category" required>
+              <option value="">-- Select Category --</option>
+              <option value="orphan">Orphan</option>
+              <option value="widow">Widow</option>
+              <option value="pwd">Person with Disability</option>
+              <option value="poor">Poor & Needy Case</option>
+            </select>
+          </label>
+
+                    <fieldset class="location-fieldset">
+                        <legend>Location Details (for coordination)</legend>
+                        <label>Continent <input name="continent" type="text" required></label>
+                        <label>Country <input name="country" type="text" required></label>
+                        <label>State / Province <input name="state" type="text" required></label>
+                        <label>County <input name="county" type="text" required></label>
+                        <label>Sub-county <input name="subcounty" type="text" required></label>
+                        <label>Ward <input name="ward" type="text" required></label>
+                        <label>Location <input name="location" type="text" required></label>
+                        <label>Sub-location <input name="sublocation" type="text" required></label>
+                        <label>Village <input name="village" type="text" required></label>
+                    </fieldset>
+
+                    <div class="small-note">These details help us plan classes and reach beneficiaries physically.</div>
+
+                    <button type="submit" class="btn">Submit Community Registration</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div><strong>🌿 Kwolmo Enterprises Ltd</strong></div>
+            <div>📞 0724581994 / 0739364896 | ✉ kwolmoinitiative@gmail.com</div>
+        </div>
+        <p class="copyright">&copy; 2025 Kwolmo Enterprises Ltd. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
