@@ -2,39 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - KWOLMO ENTERPRISES LTD</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Kwolmo Enterprises Ltd</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">KWOLMO ENTERPRISES LTD</div>
+            <div class="logo">🌿 Kwolmo Enterprises Ltd</div>
+            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="impact.html">Impact</a></li>
-                <li><a href="support.html">Donate</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="monetisation.html">Monetisation</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="section about">
-        <h2>About Kwolmo Enterprises Ltd</h2>
-        <p>Kwolmo Enterprises Ltd is a socially-driven business dedicated to giving God glory through sustainable community-based initiatives. Inspired by the values of the Seventh-day Adventist Church, Kwolmo blends economic empowerment with spiritual purpose
-            to uplift marginalized individuals.</p>
-        <h3>Founder</h3>
-        <p>Wycliffe Ongori Kegeni – A visionary leader passionate about transforming lives through mentorship, skills development, and inclusive business practices.</p>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-box">
+                <h2>Who We Are</h2>
+                <p>
+                    Kwolmo Enterprises Ltd is a community-driven social enterprise committed to empowering vulnerable groups across Kenya through training, innovation, and sustainable income-generating programs. We provide opportunities for orphans, widows, youth, and people
+                    with disabilities to achieve independence and self-reliance.
+                </p>
+                <p>
+                    Our team focuses on vocational skills, mentorship, and entrepreneurship, enabling long-term community transformation.
+                </p>
+            </div>
+            <div class="about-box">
+                <h2>Our Mission & Vision</h2>
+                <p><strong>Mission:</strong> Empowering communities for a better tomorrow through education, empowerment, and innovation.</p>
+                <p><strong>Vision:</strong> A sustainable and self-reliant society where every individual has equal access to opportunities.</p>
+                <p>
+                    We partner with organizations, local leaders, and donors to create meaningful and measurable change.
+                </p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 KWOLMO ENTERPRISES LTD. All rights reserved.</p>
+        <p>🌿 Kwolmo Enterprises Ltd © 2025 | Empowering Communities for a Better Tomorrow</p>
     </footer>
-</body>
 
+    <script>
+        const menu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
 
 </html>

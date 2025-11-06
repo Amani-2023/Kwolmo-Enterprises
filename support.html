@@ -2,57 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - KWOLMO ENTERPRISES LTD</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support | Kwolmo Enterprises Ltd</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">KWOLMO ENTERPRISES LTD</div>
+            <div class="logo">🌿 Kwolmo Enterprises Ltd</div>
+            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="impact.html">Impact</a></li>
-                <li><a href="support.html" class="active">Donate</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="monetisation.html">Monetisation</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="section support">
-        <h2>Support Our Mission</h2>
-        <p>Your contribution helps us empower communities and glorify God through service.</p>
+    <section class="donate-section">
+        <div class="donate-container">
+            <div class="donate-box">
+                <h2>Support Our Mission</h2>
+                <p>
+                    Your donation helps us empower rural communities through training, entrepreneurship, and social outreach. Every contribution goes directly into supporting vulnerable groups such as orphans, widows, and the needy.
+                </p>
+                <ul>
+                    <li>Training Admission – 500/=</li>
+                    <li>Mentorship Admission – 1000/=</li>
+                    <li>Empowerment Admission – 1500/=</li>
+                    <li>Entrepreneurship Admission – 2000/=</li>
+                </ul>
+                <p><strong>Paybill:</strong> 891300 | <strong>Account:</strong> 62527</p>
+                <a href="https://www.mchanga.africa" class="btn-primary">Donate via M-Changa</a>
+            </div>
 
-        <div class="donate-buttons">
-            <button class="btn btn-donate" id="mpesaBtn">Donate via M-Pesa</button>
-            <button class="btn btn-donate" id="paypalBtn">Donate via PayPal</button>
-        </div>
-
-        <!-- Modal -->
-        <div id="donateModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="donateInstructions"></div>
+            <div class="donate-box">
+                <h2>Join as a Member</h2>
+                <p>Become part of our community initiatives by joining one of our fellowship groups:</p>
+                <ul>
+                    <li>Fellowships – 50/=</li>
+                    <li>Welfares – 100/=</li>
+                    <li>Evangelisms – 150/=</li>
+                    <li>Benevolence – 200/=</li>
+                </ul>
+                <a href="register.html" class="btn-secondary">Join Now</a>
             </div>
         </div>
-
-        <ul class="support-list">
-            <li>Mchanga Paybill: 891300 | Account Number: 62527</li>
-            <li>Mpesa Pochi La Biashara: 0724581994</li>
-            <li>PayPal: kwolmoinitiative@gmail.com</li>
-        </ul>
     </section>
 
     <footer>
-        <p>&copy; 2025 KWOLMO ENTERPRISES LTD. All rights reserved.</p>
+        <p>🌿 Kwolmo Enterprises Ltd © 2025 | Empowering Communities for a Better Tomorrow</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const menu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
-
 
 </html>
