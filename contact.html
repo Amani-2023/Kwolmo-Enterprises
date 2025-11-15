@@ -7,54 +7,273 @@
     <title>Contact | Kwolmo Enterprises Ltd</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">KWOLMO ENTERPRISES LTD</div>
+            <div class="logo"> KWOLMO ENTERPRISES LTD</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="register.html">Registration</a></li>
                 <li><a href="impact.html">Impact</a></li>
                 <li><a href="monetisation.html">Monetisation</a></li>
                 <li><a href="support.html">Support</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Special Need</a></li>
             </ul>
         </nav>
     </header>
+    <form id="multiStepForm">
 
-    <main class="page">
-        <section class="page-header">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you</p>
-        </section>
+        <!-- SECTION A -->
+        <div class="step active" id="sectionA">
+            <h2>SECTION A: GENERAL INFORMATION</h2>
+            <label>Household Name</label><input type="text" name="household_name" required>
+            <label>Head of Household (if applicable)</label><input type="text" name="head_household">
+            <label>Contact Person</label><input type="text" name="contact_person">
+            <label>Phone Number</label><input type="text" name="phone_number">
+            <label>Location / Area / Village</label><input type="text" name="location">
+            <label>GPS / House Marker (optional)</label><input type="text" name="gps_marker">
+            <div class="step-buttons"><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
 
-        <section class="contact-section">
-            <form id="contactForm" class="form contact-form">
-                <label>Full Name <input name="name" type="text" required></label>
-                <label>Email Address <input name="email" type="email" required></label>
-                <label>Message <textarea name="message" rows="5" required></textarea></label>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-
-            <div class="contact-info">
-                <h3>Contact Details</h3>
-                <p>Kwolmo Enterprises Ltd</p>
-                <p>📞 0724581994 / 0739364896</p>
-                <p>✉ kwolmoinitiative@gmail.com</p>
-
+        <!-- SECTION B -->
+        <div class="step" id="sectionB">
+            <h2>SECTION B: CATEGORY OF NEED</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="category" value="Orphan(s)"> Orphan(s)</label>
+                <label><input type="checkbox" name="category" value="Widow"> Widow</label>
+                <label><input type="checkbox" name="category" value="Widower"> Widower</label>
+                <label><input type="checkbox" name="category" value="Person with Disability"> Person with Disability</label>
+                <label><input type="checkbox" name="category" value="Elderly"> Elderly (65+)</label>
+                <label><input type="checkbox" name="category" value="Poor/Needy"> Poor / Needy</label>
+                <label><input type="checkbox" name="category" value="Single Parent"> Single Parent</label>
+                <label><input type="checkbox" name="category" value="Child-headed Home"> Child-headed Home</label>
+                <label><input type="checkbox" name="category" value="Chronically Ill"> Chronically Ill</label>
+                <label><input type="checkbox" name="category" value="Other"> Other</label>
             </div>
-        </section>
-    </main>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
+
+        <!-- SECTION C -->
+        <div class="step" id="sectionC">
+            <h2>SECTION C: DETAILS OF PERSON(S) IN NEED</h2>
+            <label>Full Name</label><input type="text" name="full_name">
+            <label>Age Group</label>
+            <div class="radio-group">
+                <label><input type="radio" name="age_group" value="0-5"> 0–5</label>
+                <label><input type="radio" name="age_group" value="6-12"> 6–12</label>
+                <label><input type="radio" name="age_group" value="13-17"> 13–17</label>
+                <label><input type="radio" name="age_group" value="18-35"> 18–35</label>
+                <label><input type="radio" name="age_group" value="36-55"> 36–55</label>
+                <label><input type="radio" name="age_group" value="56+"> 56+</label>
+            </div>
+            <label>Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+            </div>
+            <label>Marital Status</label>
+            <div class="radio-group">
+                <label><input type="radio" name="marital_status" value="Single"> Single</label>
+                <label><input type="radio" name="marital_status" value="Married"> Married</label>
+                <label><input type="radio" name="marital_status" value="Widowed"> Widowed</label>
+                <label><input type="radio" name="marital_status" value="Divorced"> Divorced</label>
+                <label><input type="radio" name="marital_status" value="Separated"> Separated</label>
+            </div>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
+
+        <!-- SECTION D -->
+        <div class="step" id="sectionD">
+            <h2>SECTION D: SPECIFIC NEED ASSESSMENT</h2>
+            <label>Number of Orphans (if applicable)</label><input type="number" name="orphans_count">
+            <label>Ages</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="orphan_age" value="0-5"> Infant (0–5)</label>
+                <label><input type="checkbox" name="orphan_age" value="6-12"> Child (6–12)</label>
+                <label><input type="checkbox" name="orphan_age" value="13-17"> Teen (13–17)</label>
+            </div>
+            <label>Schooling</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="schooling" value="In school"> In school</label>
+                <label><input type="checkbox" name="schooling" value="Dropped out"> Dropped out</label>
+                <label><input type="checkbox" name="schooling" value="Never attended"> Never attended</label>
+            </div>
+            <label>Needs (Orphans)</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="orphan_needs" value="School fees"> School fees</label>
+                <label><input type="checkbox" name="orphan_needs" value="Uniform"> Uniform</label>
+                <label><input type="checkbox" name="orphan_needs" value="Food"> Food</label>
+                <label><input type="checkbox" name="orphan_needs" value="Clothing"> Clothing</label>
+                <label><input type="checkbox" name="orphan_needs" value="Emotional support"> Emotional support</label>
+                <label><input type="checkbox" name="orphan_needs" value="Spiritual support"> Spiritual support</label>
+                <label><input type="checkbox" name="orphan_needs" value="Sponsorship"> Sponsorship</label>
+            </div>
+
+            <h3>Widow / Widower</h3>
+            <label>Living Conditions</label>
+            <div class="radio-group">
+                <label><input type="radio" name="living_conditions" value="Stable"> Stable</label>
+                <label><input type="radio" name="living_conditions" value="Moderate"> Moderate</label>
+                <label><input type="radio" name="living_conditions" value="Critical"> Critical</label>
+            </div>
+            <label>Needs</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="widow_needs" value="Food support"> Food support</label>
+                <label><input type="checkbox" name="widow_needs" value="Shelter improvement"> Shelter improvement</label>
+                <label><input type="checkbox" name="widow_needs" value="Medical help"> Medical help</label>
+                <label><input type="checkbox" name="widow_needs" value="Income activity"> Income-generating activity</label>
+                <label><input type="checkbox" name="widow_needs" value="Prayer support"> Prayer & emotional support</label>
+            </div>
+
+            <h3>Person with Disability</h3>
+            <label>Type of Disability</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="disability_type" value="Physical"> Physical</label>
+                <label><input type="checkbox" name="disability_type" value="Visual"> Visual</label>
+                <label><input type="checkbox" name="disability_type" value="Hearing"> Hearing</label>
+                <label><input type="checkbox" name="disability_type" value="Mental"> Mental</label>
+                <label><input type="checkbox" name="disability_type" value="Multiple"> Multiple</label>
+            </div>
+
+            <h3>Poor / Needy Family</h3>
+            <label>Indicators</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="indicators" value="No income"> No regular income</label>
+                <label><input type="checkbox" name="indicators" value="Food insecurity"> Food insecurity</label>
+                <label><input type="checkbox" name="indicators" value="Poor housing"> Poor housing</label>
+                <label><input type="checkbox" name="indicators" value="Dependents"> Many dependents</label>
+                <label><input type="checkbox" name="indicators" value="Chronic illness"> Chronic illness</label>
+                <label><input type="checkbox" name="indicators" value="No schooling materials"> Lack of schooling materials</label>
+                <label><input type="checkbox" name="indicators" value="No utilities"> No electricity / water</label>
+            </div>
+            <label>Priority Needs</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="priority_needs" value="Food"> Food</label>
+                <label><input type="checkbox" name="priority_needs" value="Clothing"> Clothing</label>
+                <label><input type="checkbox" name="priority_needs" value="Housing repairs"> Housing repairs</label>
+                <label><input type="checkbox" name="priority_needs" value="Medical support"> Medical support</label>
+                <label><input type="checkbox" name="priority_needs" value="Counselling"> Counselling</label>
+                <label><input type="checkbox" name="priority_needs" value="Church support"> Church support</label>
+                <label><input type="checkbox" name="priority_needs" value="Community linkages"> Community linkages</label>
+            </div>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
+
+        <!-- SECTION E -->
+        <div class="step" id="sectionE">
+            <h2>SECTION E: SPIRITUAL INTEREST</h2>
+            <label>Interest Level</label>
+            <div class="radio-group">
+                <label><input type="radio" name="spiritual_interest" value="High"> High interest</label>
+                <label><input type="radio" name="spiritual_interest" value="Moderate"> Moderate</label>
+                <label><input type="radio" name="spiritual_interest" value="Not sure"> Not sure</label>
+                <label><input type="radio" name="spiritual_interest" value="Not interested"> Not interested</label>
+            </div>
+            <label>Would they welcome:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="welcome" value="Prayer visits"> Prayer visits</label>
+                <label><input type="checkbox" name="welcome" value="Bible study"> Bible study</label>
+                <label><input type="checkbox" name="welcome" value="Church attendance"> Church attendance</label>
+                <label><input type="checkbox" name="welcome" value="Youth/children programs"> Youth/children programs</label>
+                <label><input type="checkbox" name="welcome" value="Counseling"> Counseling</label>
+            </div>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
+
+        <!-- SECTION F -->
+        <div class="step" id="sectionF">
+            <h2>SECTION F: IMMEDIATE ACTION REQUIRED</h2>
+            <div class="radio-group">
+                <label><input type="radio" name="action_required" value="Emergency"> Emergency (within 24 hrs)</label>
+                <label><input type="radio" name="action_required" value="Urgent"> Urgent (within 7 days)</label>
+                <label><input type="radio" name="action_required" value="Follow-up"> Follow-up needed (within 30 days)</label>
+                <label><input type="radio" name="action_required" value="Monitor"> Monitor and record</label>
+            </div>
+            <label>Describe recommended action</label>
+            <textarea name="action_description" rows="4"></textarea>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="button" onclick="nextStep()">Next</button></div>
+        </div>
+
+        <!-- SECTION G -->
+        <div class="step" id="sectionG">
+            <h2>SECTION G: FINAL NOTES & OBSERVATIONS</h2>
+            <textarea name="final_notes" rows="5"></textarea>
+            <div class="step-buttons"><button type="button" onclick="prevStep()">Previous</button><button type="submit">Submit</button></div>
+        </div>
+
+    </form>
+
+    <script>
+        let currentStep = 0;
+        const steps = document.querySelectorAll(".step");
+
+        function showStep(index) {
+            steps.forEach((step, i) => step.classList.remove("active"));
+            steps[index].classList.add("active");
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        // Google Sheets submission
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwMmxQxGB-aj0Fc_I5TPoj68t_MCX1jB2psABMVfl4SlJ9LPkj3rDcv2_LH9r_AlG1Q/exec";
+
+
+        document.getElementById("communityForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = {};
+
+            const formData = new FormData(form);
+            const keys = [...new Set(formData.keys())];
+
+            keys.forEach(key => {
+                const values = formData.getAll(key);
+                data[key] = values.join(", "); // combine multiple checkbox selections
+            });
+
+            fetch(WEB_APP_URL, {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(() => {
+                    alert("Special Needs Registration submitted successfully!");
+                    form.reset();
+                    currentStep = 0;
+                    showStep(currentStep);
+                })
+                .catch(err => alert("Error submitting form: " + err));
+        });
+    </script>
+
 
     <footer>
-
         <p class="copyright">&copy; 2025 Kwolmo Enterprises Ltd. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
+
+
 </body>
 
 </html>

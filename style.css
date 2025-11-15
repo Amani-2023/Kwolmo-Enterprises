@@ -956,3 +956,82 @@ footer {
         flex: 1 1 100%;
     }
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+h2 {
+    background: #2a4d69;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.checkbox-group,
+.radio-group {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group label,
+.radio-group label {
+    font-weight: normal;
+    display: block;
+}
+
+button {
+    padding: 12px 20px;
+    background: #2a4d69;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #16334a;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+}
