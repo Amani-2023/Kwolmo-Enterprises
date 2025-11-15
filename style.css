@@ -265,6 +265,11 @@ Responsive
         flex-direction: column;
         gap: 10px;
     }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        /* items move to next line on small screens */
+    }
     .service-cards,
     .impact-cards {
         flex-direction: column;
